@@ -113,6 +113,20 @@ namespace
   {
     ///////////////////////// TO-DO (1) //////////////////////////////
       /// Implement the algorithm above.
+      if (quantity == 1) {
+
+          trace(broken_cart, working_cart, spare_cart);
+          working_cart.push(broken_cart.top());
+          broken_cart.pop();
+      }
+      else {
+          carefully_move_grocery_items(quantity - 1, broken_cart, working_cart, spare_cart);
+          working_cart.push(broken_cart.top());
+          broken_cart.pop();
+          trace(broken_cart,working_cart,spare_cart);
+          carefully_move_grocery_items(quantity - 1, broken_cart, working_cart, spare_cart);
+      }
+
 
     /////////////////////// END-TO-DO (1) ////////////////////////////
   }
@@ -142,7 +156,7 @@ int main( int argc, char * argv[] )
   // Snag an empty cart as I enter the grocery store
   ///////////////////////// TO-DO (3) //////////////////////////////
     /// Create an empty grocery item cart as a stack of grocery items and call it myCart.
-
+    stack<GroceryItem> myCart;
   /////////////////////// END-TO-DO (3) ////////////////////////////
 
 
@@ -162,6 +176,17 @@ int main( int argc, char * argv[] )
     ///      00038000291210   rice krispies    Kellogg's
     ///      00075457129000   milk             any                     <===  heaviest item, put this on the bottom
 
+
+    myCart.push();
+    myCart.push();
+    myCart.push();
+    myCart.push();
+    myCart.push();
+
+    while (!myCart.empty) {
+        std::cout << myCart.top() << endl;
+        myCart.pop()
+    }
   /////////////////////// END-TO-DO (4) ////////////////////////////
 
 
