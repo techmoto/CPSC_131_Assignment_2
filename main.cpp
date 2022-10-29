@@ -223,7 +223,17 @@ int main( int argc, char * argv[] )
   ///////////////////////// TO-DO (6) //////////////////////////////
     /// Create an empty checkout counter as a queue of grocery items and call it checkoutCounter.  Then remove the grocery items
     /// from your working cart and place them on the checkout counter, i.e., put them in this checkoutCounter queue.
+  std::queue<GroceryItem> checkoutCounter;
+    while (!workingCart.empty()) {
+        checkoutCounter.push(workingCart.top);
+        workingCart.pop()
+    }
 
+    // test
+    while (!checkoutCounter.empty()) {
+        std::cout << checkoutCounter.top() << endl;
+        checkoutCounter.pop();
+    }
   /////////////////////// END-TO-DO (6) ////////////////////////////
 
 
